@@ -1,0 +1,18 @@
+{
+    "sourceFile": "src/components/AlbumList.js",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 0,
+            "patches": [
+                {
+                    "date": 1718074484213,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                }
+            ],
+            "date": 1718074484213,
+            "name": "Commit-0",
+            "content": "import React, { useState } from 'react';\r\nimport AlbumView from './AlbumView';\r\n\r\nfunction AlbumList({ albums }) {\r\n  const [selectedAlbum, setSelectedAlbum] = useState(null);\r\n\r\n  const handleThumbnailClick = (album) => {\r\n    setSelectedAlbum(album);\r\n  };\r\n\r\n  return (\r\n    <div>\r\n      <h2>Albums</h2>\r\n      <div className=\"album-grid\">\r\n        {albums.map((album, index) => (\r\n          <div key={index} className=\"album-thumbnail\">\r\n            <h3>{album.title}</h3>\r\n            {album.images.map((image, i) => (\r\n              <img\r\n                key={i}\r\n                src={URL.createObjectURL(image)}\r\n                alt={`Thumbnail ${i}`}\r\n                onClick={() => handleThumbnailClick(album)}\r\n                className=\"thumbnail\"\r\n              />\r\n            ))}\r\n          </div>\r\n        ))}\r\n      </div>\r\n      {selectedAlbum && (\r\n        <AlbumView album={selectedAlbum} onClose={() => setSelectedAlbum(null)} />\r\n      )}\r\n    </div>\r\n  );\r\n}\r\n\r\nexport default AlbumList;\r\n"
+        }
+    ]
+}

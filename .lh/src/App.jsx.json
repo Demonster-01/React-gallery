@@ -1,0 +1,74 @@
+{
+    "sourceFile": "src/App.jsx",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 14,
+            "patches": [
+                {
+                    "date": 1718072667719,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1718074639413,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,33 +1,35 @@\n-import React, { useState, useEffect } from 'react';\n-import AlbumForm from './components/AlbumForm';\n-import AlbumList from './components/AlbumList';\n-import './App.css';\n+import { useState } from 'react'\n+import reactLogo from './assets/react.svg'\n+import viteLogo from '/vite.svg'\n+import './App.css'\n \n function App() {\n-  const [albums, setAlbums] = useState([]);\n+  const [count, setCount] = useState(0)\n \n-  useEffect(() => {\n-    const storedAlbums = JSON.parse(localStorage.getItem('albums'));\n-    if (storedAlbums) {\n-      setAlbums(storedAlbums);\n-    }\n-  }, []);\n-\n-  useEffect(() => {\n-    localStorage.setItem('albums', JSON.stringify(albums));\n-  }, [albums]);\n-\n-  const addAlbum = (album) => {\n-    setAlbums([...albums, album]);\n-  };\n-\n   return (\n-    <div className=\"App\">\n-      <h1>Image Album</h1>\n-      <AlbumForm addAlbum={addAlbum} />\n-      <AlbumList albums={albums} />\n-    </div>\n-  );\n+    <>\n+      <div>\n+        <a href=\"https://vitejs.dev\" target=\"_blank\">\n+          <img src={viteLogo} className=\"logo\" alt=\"Vite logo\" />\n+        </a>\n+        <a href=\"https://react.dev\" target=\"_blank\">\n+          <img src={reactLogo} className=\"logo react\" alt=\"React logo\" />\n+        </a>\n+      </div>\n+      <h1>Vite + React</h1>\n+      <div className=\"card\">\n+        <button onClick={() => setCount((count) => count + 1)}>\n+          count is {count}\n+        </button>\n+        <p>\n+          Edit <code>src/App.jsx</code> and save to test HMR\n+        </p>\n+      </div>\n+      <p className=\"read-the-docs\">\n+        Click on the Vite and React logos to learn more\n+      </p>\n+    </>\n+  )\n }\n \n-export default App;\n+export default App\n"
+                },
+                {
+                    "date": 1718075223043,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,35 +1,33 @@\n-import { useState } from 'react'\n-import reactLogo from './assets/react.svg'\n-import viteLogo from '/vite.svg'\n-import './App.css'\n+import React, { useState, useEffect } from 'react';\n+import AlbumForm from './components/AlbumForm';\n+import AlbumList from './components/AlbumList';\n+import './App.css';\n \n function App() {\n-  const [count, setCount] = useState(0)\n+  const [albums, setAlbums] = useState([]);\n \n+  useEffect(() => {\n+    const storedAlbums = JSON.parse(localStorage.getItem('albums'));\n+    if (storedAlbums) {\n+      setAlbums(storedAlbums);\n+    }\n+  }, []);\n+\n+  useEffect(() => {\n+    localStorage.setItem('albums', JSON.stringify(albums));\n+  }, [albums]);\n+\n+  const addAlbum = (album) => {\n+    setAlbums([...albums, album]);\n+  };\n+\n   return (\n-    <>\n-      <div>\n-        <a href=\"https://vitejs.dev\" target=\"_blank\">\n-          <img src={viteLogo} className=\"logo\" alt=\"Vite logo\" />\n-        </a>\n-        <a href=\"https://react.dev\" target=\"_blank\">\n-          <img src={reactLogo} className=\"logo react\" alt=\"React logo\" />\n-        </a>\n-      </div>\n-      <h1>Vite + React</h1>\n-      <div className=\"card\">\n-        <button onClick={() => setCount((count) => count + 1)}>\n-          count is {count}\n-        </button>\n-        <p>\n-          Edit <code>src/App.jsx</code> and save to test HMR\n-        </p>\n-      </div>\n-      <p className=\"read-the-docs\">\n-        Click on the Vite and React logos to learn more\n-      </p>\n-    </>\n-  )\n+    <div className=\"AlbumContainer\">\n+      <h1>Image Album</h1>\n+      <AlbumForm addAlbum={addAlbum} />\n+      <AlbumList albums={albums} />\n+    </div>\n+  );\n }\n \n-export default App\n+export default App;\n"
+                },
+                {
+                    "date": 1718076853737,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -21,13 +21,15 @@\n     setAlbums([...albums, album]);\n   };\n \n   return (\n-    <div className=\"AlbumContainer\">\n-      <h1>Image Album</h1>\n-      <AlbumForm addAlbum={addAlbum} />\n-      <AlbumList albums={albums} />\n-    </div>\n-  );\n+<div className=\"App\">\n+  <div className=\"AlbumContainer\">\n+    <h1>Image Album</h1>\n+    <AlbumForm addAlbum={addAlbum} />\n+    <AlbumList albums={albums} />\n+  </div>\n+</div>\n+\n }\n \n export default App;\n"
+                },
+                {
+                    "date": 1718076895380,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -21,15 +21,13 @@\n     setAlbums([...albums, album]);\n   };\n \n   return (\n-<div className=\"App\">\n-  <div className=\"AlbumContainer\">\n-    <h1>Image Album</h1>\n-    <AlbumForm addAlbum={addAlbum} />\n-    <AlbumList albums={albums} />\n-  </div>\n-</div>\n-\n+    <div className=\"AlbumContainer\">\n+      <h1>Image Album</h1>\n+      <AlbumForm addAlbum={addAlbum} />\n+      <AlbumList albums={albums} />\n+    </div>\n+  );\n }\n \n export default App;\n"
+                },
+                {
+                    "date": 1718076911427,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -21,9 +21,9 @@\n     setAlbums([...albums, album]);\n   };\n \n   return (\n-    <div className=\"AlbumContainer\">\n+    <div className=\"App\">\n       <h1>Image Album</h1>\n       <AlbumForm addAlbum={addAlbum} />\n       <AlbumList albums={albums} />\n     </div>\n"
+                },
+                {
+                    "date": 1718076929619,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -22,12 +22,15 @@\n   };\n \n   return (\n     <div className=\"App\">\n-      <h1>Image Album</h1>\n-      <AlbumForm addAlbum={addAlbum} />\n-      <AlbumList albums={albums} />\n-    </div>\n+  <div className=\"AlbumContainer\">\n+    <h1>Image Album</h1>\n+    <AlbumForm addAlbum={addAlbum} />\n+    <AlbumList albums={albums} />\n+  </div>\n+</div>\n+\n   );\n }\n \n export default App;\n"
+                },
+                {
+                    "date": 1718083643019,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -23,9 +23,9 @@\n \n   return (\n     <div className=\"App\">\n   <div className=\"AlbumContainer\">\n-    <h1>Image Album</h1>\n+    <h1>Image Album</h1><hr/>\n     <AlbumForm addAlbum={addAlbum} />\n     <AlbumList albums={albums} />\n   </div>\n </div>\n"
+                },
+                {
+                    "date": 1718084158170,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -24,10 +24,12 @@\n   return (\n     <div className=\"App\">\n   <div className=\"AlbumContainer\">\n     <h1>Image Album</h1><hr/>\n+    <div>\n     <AlbumForm addAlbum={addAlbum} />\n     <AlbumList albums={albums} />\n+    </div>\n   </div>\n </div>\n \n   );\n"
+                },
+                {
+                    "date": 1718084182096,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -25,11 +25,14 @@\n     <div className=\"App\">\n   <div className=\"AlbumContainer\">\n     <h1>Image Album</h1><hr/>\n     <div>\n-    <AlbumForm addAlbum={addAlbum} />\n+      <div>\n+    <AlbumForm addAlbum={addAlbum} /></div>\n+    <div>\n     <AlbumList albums={albums} />\n     </div>\n+    </div>\n   </div>\n </div>\n \n   );\n"
+                },
+                {
+                    "date": 1718084209857,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -22,19 +22,17 @@\n   };\n \n   return (\n     <div className=\"App\">\n-  <div className=\"AlbumContainer\">\n-    <h1>Image Album</h1><hr/>\n-    <div>\n-      <div>\n-    <AlbumForm addAlbum={addAlbum} /></div>\n-    <div>\n-    <AlbumList albums={albums} />\n+      <div className=\"AlbumContainer\">\n+        <h1>Image Album</h1><hr />\n+        <div>\n+          <AlbumForm addAlbum={addAlbum} /></div>\n+        <div>\n+          <AlbumList albums={albums} />\n+        </div>\n     </div>\n-    </div>\n-  </div>\n-</div>\n+</div >\n \n   );\n }\n \n"
+                },
+                {
+                    "date": 1718084221843,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -24,9 +24,9 @@\n   return (\n     <div className=\"App\">\n       <div className=\"AlbumContainer\">\n         <h1>Image Album</h1><hr />\n-        <div>\n+        <div className='FormBox'>\n           <AlbumForm addAlbum={addAlbum} /></div>\n         <div>\n           <AlbumList albums={albums} />\n         </div>\n"
+                },
+                {
+                    "date": 1718084236080,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -26,9 +26,9 @@\n       <div className=\"AlbumContainer\">\n         <h1>Image Album</h1><hr />\n         <div className='FormBox'>\n           <AlbumForm addAlbum={addAlbum} /></div>\n-        <div>\n+        <div className='AlbumBox'>\n           <AlbumList albums={albums} />\n         </div>\n     </div>\n </div >\n"
+                },
+                {
+                    "date": 1718084638495,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -24,13 +24,15 @@\n   return (\n     <div className=\"App\">\n       <div className=\"AlbumContainer\">\n         <h1>Image Album</h1><hr />\n+        <div>\n         <div className='FormBox'>\n           <AlbumForm addAlbum={addAlbum} /></div>\n         <div className='AlbumBox'>\n           <AlbumList albums={albums} />\n         </div>\n+        </div>\n     </div>\n </div >\n \n   );\n"
+                },
+                {
+                    "date": 1718086124700,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -25,16 +25,17 @@\n     <div className=\"App\">\n       <div className=\"AlbumContainer\">\n         <h1>Image Album</h1><hr />\n         <div>\n-        <div className='FormBox'>\n-          <AlbumForm addAlbum={addAlbum} /></div>\n-        <div className='AlbumBox'>\n-          <AlbumList albums={albums} />\n+          <div className='FormBox'>\n+            <AlbumForm addAlbum={addAlbum} />\n+          </div>\n+          <div className='AlbumBox'>\n+            <AlbumList albums={albums} />\n+          </div>\n         </div>\n-        </div>\n-    </div>\n-</div >\n+      </div>\n+    </div >\n \n   );\n }\n \n"
+                }
+            ],
+            "date": 1718072667719,
+            "name": "Commit-0",
+            "content": "import React, { useState, useEffect } from 'react';\nimport AlbumForm from './components/AlbumForm';\nimport AlbumList from './components/AlbumList';\nimport './App.css';\n\nfunction App() {\n  const [albums, setAlbums] = useState([]);\n\n  useEffect(() => {\n    const storedAlbums = JSON.parse(localStorage.getItem('albums'));\n    if (storedAlbums) {\n      setAlbums(storedAlbums);\n    }\n  }, []);\n\n  useEffect(() => {\n    localStorage.setItem('albums', JSON.stringify(albums));\n  }, [albums]);\n\n  const addAlbum = (album) => {\n    setAlbums([...albums, album]);\n  };\n\n  return (\n    <div className=\"App\">\n      <h1>Image Album</h1>\n      <AlbumForm addAlbum={addAlbum} />\n      <AlbumList albums={albums} />\n    </div>\n  );\n}\n\nexport default App;\n"
+        }
+    ]
+}

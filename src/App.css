@@ -1,0 +1,112 @@
+body, .Container {
+  /* background-color: rgb(212, 29, 29); */
+  width: 100%;
+  margin: 0; 
+  padding: 0; 
+}
+
+
+
+.AlbumContainer {
+  text-align: center; 
+  padding: 20px;
+  height: 80vh;
+  background-color: white; 
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Optional: for a subtle shadow effect */
+}
+
+
+.App {
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh; 
+  width: 100vw; 
+  text-align: center;
+  background-color: #466174;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+
+.CKEditor{
+  width: 40px;
+}
+
+
+.album-container {
+  max-height: 350px; /* Adjust as needed */
+  overflow-y: auto;
+}
+.album-grid {
+  display: flex;
+  flex-wrap: wrap;
+  height: 10%;
+  gap: 10px;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.album-thumbnail {
+  border: 1px solid #ccc;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  
+  overflow: hidden;
+}
+
+.thumbnail {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  cursor: pointer;
+}
+
+.album-view {
+  position: fixed;
+  height: 80%;
+  overflow-y: scroll;
+  top: 10%;
+  left: 10%;
+  right: 10%;
+  background: white;
+  padding: 20px;
+  border: 1px solid #ccc;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.album-images img {
+  max-width: 100%;
+  height: 80%;
+}
+
+.FormBox{
+  display: flex;
+  flex-direction: column;
+  float: left;
+  width: 40%;
+  border-right: 3px solid black;
+  padding: 10px;
+  margin-right: 20px;
+  /* background-color: rgba(6, 238, 199, 0.507); */
+}
+
+.AlbumBox{
+
+  /* background-color: #466174; */
+  height: 70%;
+}

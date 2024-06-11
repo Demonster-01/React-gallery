@@ -1,0 +1,26 @@
+{
+    "sourceFile": "src/components/AlbumView.jsx",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 2,
+            "patches": [
+                {
+                    "date": 1718074367905,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1718083344482,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -8,8 +8,10 @@\n       <div className=\"album-images\">\r\n         {album.images.map((image, index) => (\r\n           <img key={index} src={URL.createObjectURL(image)} alt={`Image ${index}`} />\r\n         ))}\r\n+        \r\n+      <button onClick={onClose}>Close</button>\r\n       </div>\r\n       <button onClick={onClose}>Close</button>\r\n     </div>\r\n   );\r\n"
+                },
+                {
+                    "date": 1718083369489,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -8,10 +8,8 @@\n       <div className=\"album-images\">\r\n         {album.images.map((image, index) => (\r\n           <img key={index} src={URL.createObjectURL(image)} alt={`Image ${index}`} />\r\n         ))}\r\n-        \r\n-      <button onClick={onClose}>Close</button>\r\n       </div>\r\n       <button onClick={onClose}>Close</button>\r\n     </div>\r\n   );\r\n"
+                }
+            ],
+            "date": 1718074367905,
+            "name": "Commit-0",
+            "content": "import React from 'react';\r\n\r\nfunction AlbumView({ album, onClose }) {\r\n  return (\r\n    <div className=\"album-view\">\r\n      <h2>{album.title}</h2>\r\n      <div dangerouslySetInnerHTML={{ __html: album.description }} />\r\n      <div className=\"album-images\">\r\n        {album.images.map((image, index) => (\r\n          <img key={index} src={URL.createObjectURL(image)} alt={`Image ${index}`} />\r\n        ))}\r\n      </div>\r\n      <button onClick={onClose}>Close</button>\r\n    </div>\r\n  );\r\n}\r\n\r\nexport default AlbumView;\r\n"
+        }
+    ]
+}
