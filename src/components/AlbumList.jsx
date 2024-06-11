@@ -13,7 +13,7 @@ function AlbumList({ albums }) {
   return (
     <div>
       <h2><u>Albums collection</u></h2>
-      <div className="album-container"> {/* Wrap .album-grid with a container */}
+      <div className="album-container"> 
         <div className="album-grid">
           {albums.map((album, index) => (
             <div key={index} className="album-thumbnail">

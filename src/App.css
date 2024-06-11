@@ -44,7 +44,7 @@ form {
 
 
 .album-container {
-  max-height: 350px; /* Adjust as needed */
+  max-height: 350px; 
   overflow-y: auto;
 }
 .album-grid {
