@@ -1,0 +1,22 @@
+{
+    "sourceFile": "src/components/try",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 1,
+            "patches": [
+                {
+                    "date": 1718268939234,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1718268956256,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -36,9 +36,9 @@\n           <div className=\"mb-3\">\r\n             <input type=\"text\" className=\"form-control\" value={title} onChange={(e) => setTitle(e.target.value)} placeholder='Image Title' />\r\n           </div>\r\n \r\n-          {/* <div className=\"mb-3\"> */}\r\n+          <div className=\"mb-3\">\r\n             <label>Images:</label>\r\n             <div {...getRootProps({ className: 'dropzone' })} style={dropzoneStyle}>\r\n               <input {...getInputProps()} />\r\n               <p>Drag 'n' drop some files here, or click to select files</p>\r\n"
+                }
+            ],
+            "date": 1718268939234,
+            "name": "Commit-0",
+            "content": "import React, { useState, useCallback } from 'react';\r\nimport { CKEditor } from '@ckeditor/ckeditor5-react';\r\nimport ClassicEditor from '@ckeditor/ckeditor5-build-classic';\r\nimport { useDropzone } from 'react-dropzone';\r\n\r\nfunction AlbumForm({ addAlbum }) {\r\n  const [title, setTitle] = useState('');\r\n  const [description, setDescription] = useState('');\r\n  const [images, setImages] = useState([]);\r\n\r\n  const onDrop = useCallback((acceptedFiles) => {\r\n    setImages([...images, ...acceptedFiles]);\r\n  }, [images]);\r\n\r\n  const { getRootProps, getInputProps } = useDropzone({ onDrop });\r\n\r\n  const handleSubmit = (event) => {\r\n    event.preventDefault();\r\n    if (title && description && images.length > 0) {\r\n      const newAlbum = { title, description, images };\r\n      addAlbum(newAlbum);\r\n      setTitle('');\r\n      setDescription('');\r\n      setImages([]);\r\n    } else {\r\n      alert('Please fill in all fields and upload images.');\r\n    }\r\n  };\r\n\r\n  return (\r\n    <>\r\n      <div className='container'>\r\n        <form onSubmit={handleSubmit}>\r\n          <h2><u>Add Photo</u></h2>\r\n\r\n          <div className=\"mb-3\">\r\n            <input type=\"text\" className=\"form-control\" value={title} onChange={(e) => setTitle(e.target.value)} placeholder='Image Title' />\r\n          </div>\r\n\r\n          {/* <div className=\"mb-3\"> */}\r\n            <label>Images:</label>\r\n            <div {...getRootProps({ className: 'dropzone' })} style={dropzoneStyle}>\r\n              <input {...getInputProps()} />\r\n              <p>Drag 'n' drop some files here, or click to select files</p>\r\n            </div>\r\n            <div className=\"mt-2\">\r\n              {images.length > 0 && (\r\n                <div>\r\n                  <h4>Selected Images:</h4>\r\n                  <ul>\r\n                    {images.map((file, index) => (\r\n                      <li key={index}>{file.name}</li>\r\n                    ))}\r\n                  </ul>\r\n                </div>\r\n              )}\r\n            </div>\r\n          </div>\r\n\r\n          <div className=\"mb-3\" style={{ width: '400px' }}>\r\n            <CKEditor className=\"CKEditor\"\r\n              editor={ClassicEditor}\r\n              data={description}\r\n              config={{\r\n                placeholder: 'Enter your description here...'\r\n              }}\r\n              onChange={(event, editor) => {\r\n                const data = editor.getData();\r\n                setDescription(data);\r\n              }}\r\n            />\r\n          </div>\r\n          \r\n          <button className=\"btn btn-success\" type=\"submit\">Create Album</button>\r\n        </form>\r\n      </div>\r\n    </>\r\n  );\r\n}\r\n\r\nconst dropzoneStyle = {\r\n  border: '2px dashed #cccccc',\r\n  borderRadius: '4px',\r\n  padding: '20px',\r\n  textAlign: 'center',\r\n  cursor: 'pointer',\r\n  backgroundColor: '#fafafa',\r\n};\r\n\r\nexport default AlbumForm;\r\n"
+        }
+    ]
+}

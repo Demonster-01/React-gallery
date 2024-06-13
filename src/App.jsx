@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import AlbumForm from './components/AlbumForm';
 import AlbumList from './components/AlbumList';
+
+
 import './App.css';
 
 function App() {
@@ -34,7 +36,10 @@ function App() {
           </div>
         </div>
       </div>
+      
+    {/* <Dropzone/> */}
     </div >
+
 
   );
 }
